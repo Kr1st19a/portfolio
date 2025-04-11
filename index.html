@@ -102,8 +102,22 @@
         <section id="certificate" class="py-3 text-center">
             <div class="container">
                 <h2 class="text-primary">Сертификаты</h2>
-                <p>Вот мой сертификат об окончании курса:</p>
-                <img src="certificate.jpg" alt="Сертификат" class="img-fluid" style="max-width: 30%; border: 2px solid #007bff52; border-radius: 10px;">
+                
+                <!-- Картинка 1 -->
+        <img src="certificate.jpg" alt="Premiere Pro"
+        class="img-fluid m-2"
+        style="max-width: 30%; cursor: pointer; border: 2px solid #007bff52; border-radius: 10px;"
+        data-bs-toggle="modal"
+        data-bs-target="#imageModal"
+        onclick="changeModalImage('certificate.jpg')">
+                
+                <!-- Картинка 2 -->
+        <img src="english.jpg" alt="Английский"
+        class="img-fluid m-2"
+        style="max-width: 40%; cursor: pointer; box-shadow: 0 0 15px rgba(252, 251, 251, 0.39); border-radius: 10px;"
+        data-bs-toggle="modal"
+        data-bs-target="#imageModal"
+        onclick="changeModalImage('english.jpg')">
             </div>
         </section>
         
@@ -126,6 +140,26 @@
             <p>&copy; 2025. Все права защищены.</p>
         </footer>
     </div>
-    
+    <!-- Модальное окно -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="modalImage" src="" class="img-fluid rounded" alt="Сертификат">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS (ОБЯЗАТЕЛЬНО) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Скрипт для смены изображения -->
+  <script>
+    function changeModalImage(src) {
+      document.getElementById('modalImage').src = src;
+    }
+  </script>
 </body>
 </html>
