@@ -57,6 +57,24 @@
             padding-right: 0 !important;
         }
 
+        .responsive-iframe {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Соотношение 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .responsive-iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
     </style>
 </head>
 <body>
@@ -94,7 +112,22 @@
         
         <section id="portfolio" class="py-3 text-center">
             <div class="container">
-                <h2 class="text-primary">Примеры работ</h2>
+                <h2 class="text-primary mb-4">Примеры работ</h2>
+
+        <!-- Навигация вкладок -->
+        <ul class="nav nav-tabs justify-content-center" id="videoTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="youtube-tab" data-bs-toggle="tab" data-bs-target="#youtube" type="button" role="tab">YouTube</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="Dzen-tab" data-bs-toggle="tab" data-bs-target="#dzen" type="button" role="tab">Dzen</button>
+            </li>
+        </ul>
+
+        <!-- Контент вкладок -->
+        <div class="tab-content pt-4" id="videoTabsContent">
+            <!-- Вкладка YouTube -->
+            <div class="tab-pane fade show active" id="youtube" role="tabpanel">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <iframe class="w-100" height="315" src="https://www.youtube.com/embed/0e1wTKHjf3k" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
@@ -110,6 +143,32 @@
                     </div>
                 </div>
             </div>
+            <!-- Вкладка Яндекс Дзен -->
+            <div class="tab-pane fade" id="dzen" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="responsive-iframe">
+                        <iframe class="w-100" height="315" src="https://dzen.ru/embed/oM0ZNsyAJAAA?from_block=partner&from=zen&mute=1&autoplay=0&tv=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" data-testid="embed-iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        </div> 
+                    </div>
+                    <div class="col-md-6 mb-3">            
+                        <div class="responsive-iframe">
+                            <iframe class="w-100" height="315"  src="https://dzen.ru/embed/oM0bN4SAJAAA?from_block=partner&from=zen&mute=1&autoplay=0&tv=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" data-testid="embed-iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">  
+                        <div class="responsive-iframe">
+                            <iframe class="w-100" height="315" src="https://dzen.ru/embed/oM0ZT6CAJAAA?from_block=partner&from=zen&mute=1&autoplay=0&tv=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" data-testid="embed-iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">   
+                        <div class="responsive-iframe">
+                            <iframe class="w-100" height="315" src="https://dzen.ru/embed/oM0Yh8iAJAAA?from_block=partner&from=zen&mute=1&autoplay=0&tv=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" data-testid="embed-iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
         </section>
         
         <section id="certificate" class="py-3 text-center">
