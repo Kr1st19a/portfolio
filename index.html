@@ -146,6 +146,10 @@
             <!-- Вкладка Яндекс Дзен -->
             <div class="tab-pane fade" id="dzen" role="tabpanel">
                 <div class="row">
+                    <div class="alert alert-warning text-center" id="dzenWarning" style="display: none;">
+                    ⚠️ Видео с платформы Дзен могут не отображаться из-за блокировщика рекламы. 
+                    Пожалуйста, отключите AdBlock или откройте сайт в другом браузере.
+                  </div>
                     <div class="col-md-6 mb-3">
                         <div class="responsive-iframe">
                         <iframe class="w-100" height="315" src="https://dzen.ru/embed/oM0ZNsyAJAAA?from_block=partner&from=zen&mute=1&autoplay=0&tv=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" data-testid="embed-iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
@@ -235,6 +239,26 @@
   
     const modal = document.getElementById('imageModal');
   </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const dzenIframes = document.querySelectorAll('#dzen iframe');
+      let loadedCount = 0;
   
+      dzenIframes.forEach((iframe) => {
+        iframe.addEventListener("load", () => {
+          loadedCount++;
+        });
+  
+        // Таймер на случай, если iframe не загрузится (например, из-за AdBlock)
+        setTimeout(() => {
+          if (loadedCount === 0) {
+            document.getElementById("dzenWarning").style.display = "block";
+          }
+        }, 2000); // 2 секунды на загрузку
+      });
+    });
+  </script>
+
 </body>
 </html>
