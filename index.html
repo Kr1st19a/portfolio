@@ -75,6 +75,22 @@
             border: none;
         }
 
+        .lang-switch {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
+        .lang-switch .btn {
+        border-radius: 5px;
+        padding: 4px 12px;
+        font-weight: bold;
+        transition: background-color 0.3s, color 0.3s;
+        }
+        .lang-switch .btn:hover {
+        background-color: #ffffff46;
+        color: #fff;
+        }
+
     </style>
 </head>
 <body>
@@ -83,36 +99,42 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">МОЁ ПОРТФОЛИО</a>
+                    <a class="navbar-brand" href="#" data-i18n="portfolio">МОЁ ПОРТФОЛИО</a>
+
+                    <div class="lang-switch btn-group" role="group" aria-label="Language switcher">
+                        <button type="button" class="btn btn-outline-light btn-sm" onclick="setLanguage('ru')">RU</button>
+                        <button type="button" class="btn btn-outline-light btn-sm" onclick="setLanguage('en')">EN</button>
+                    </div>
+
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="#about">О себе</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#portfolio">Примеры работ</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#certificate">Сертификаты</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about" data-i18n="about">О себе</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#portfolio" data-i18n="works">Примеры работ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#certificate" data-i18n="certificates">Сертификаты</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="contacts">Контакты</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> 
             </nav>
         </header>
         
         <section id="about" class="py-3 text-center">
             <div class="container">
-                <h2 class="text-primary">О себе</h2>
-                <p class="lead">Привет! Меня зовут Баженова Кристина, я начинающий видеомонтажёр.</p>
-                <p>Работаю в Adobe Premiere Pro и изучаю After Effects.</p>
-                <p>Обучаюсь в Skillbox на курсе «Профессия Режиссёр монтажа». Уже завершила курс «Монтаж в Adobe Premiere Pro» и продолжаю изучать теорию монтажа, анимацию и создание промо-роликов.</p>
-                <p>Также немного владею Photoshop — этого хватает для работы с простыми графическими элементами в видео.</p>
-                <p>Стараюсь развивать навыки, искать интересные монтажные решения и делать видео, которые цепляют зрителя. Буду рада новым проектам и возможностям расти в профессии!</p>                
+                <h2 class="text-primary" data-i18n="about">О себе</h2>
+                <p class="lead" data-i18n="aboutText1">Привет! Меня зовут Баженова Кристина, я начинающий видеомонтажёр.</p>
+                <p data-i18n="aboutText2">Работаю в Adobe Premiere Pro и изучаю After Effects.</p>
+                <p data-i18n="aboutText3">Обучаюсь в Skillbox на курсе «Профессия Режиссёр монтажа». Уже завершила курс «Монтаж в Adobe Premiere Pro» и продолжаю изучать теорию монтажа, анимацию и создание промо-роликов.</p>
+                <p data-i18n="aboutText4">Также немного владею Photoshop — этого хватает для работы с простыми графическими элементами в видео.</p>
+                <p data-i18n="aboutText5">Стараюсь развивать навыки, искать интересные монтажные решения и делать видео, которые цепляют зрителя. Буду рада новым проектам и возможностям расти в профессии!</p>                
             </div>
         </section>
         
         <section id="portfolio" class="py-3 text-center">
             <div class="container">
-                <h2 class="text-primary mb-4">Примеры работ</h2>
+                <h2 class="text-primary mb-4" data-i18n="works">Примеры работ</h2>
 
         <!-- Навигация вкладок -->
         <ul class="nav nav-tabs justify-content-center" id="videoTabs" role="tablist">
@@ -146,7 +168,7 @@
             <!-- Вкладка Яндекс Дзен -->
             <div class="tab-pane fade" id="dzen" role="tabpanel">
                 <div class="row">
-                    <div class="alert alert-warning text-center" id="dzenWarning" style="display: none;">
+                    <div class="alert alert-warning text-center" id="dzenWarning" data-i18n="warningDzen" style="display: none;">
                     ⚠️ Видео с платформы Дзен могут не отображаться из-за блокировщика рекламы. 
                     Пожалуйста, отключите AdBlock или откройте сайт в другом браузере.
                   </div>
@@ -177,29 +199,31 @@
         
         <section id="certificate" class="py-3 text-center">
             <div class="container">
-                <h2 class="text-primary">Сертификаты</h2>
+                <h2 class="text-primary" data-i18n="certificates">Сертификаты</h2>
                 
                 <!-- Картинка 1 -->
         <img src="certificate.jpg" alt="Premiere Pro"
         class="img-fluid m-2"
         style="max-width: 30%; cursor: pointer; border: 2px solid #007bff52; border-radius: 10px;"
+        data-i18n-img="certificate"
         data-bs-toggle="modal"
         data-bs-target="#imageModal"
-        onclick="changeModalImage('certificate.jpg')">
+        onclick="changeModalImageByKey('certificate')">
                 
                 <!-- Картинка 2 -->
         <img src="english.jpg" alt="Английский"
         class="img-fluid m-2"
         style="max-width: 40%; cursor: pointer; box-shadow: 0 0 15px rgba(252, 251, 251, 0.39); border-radius: 10px;"
+        data-i18n-img="english"
         data-bs-toggle="modal"
         data-bs-target="#imageModal"
-        onclick="changeModalImage('english.jpg')">
+        onclick="changeModalImageByKey('english')">
             </div>
         </section>
         
         <section id="contact" class="py-3 text-center">
             <div class="container">
-                <h2 class="text-primary">Контакты</h2>
+                <h2 class="text-primary" data-i18n="contacts">Контакты</h2>
                 <p>Email: kristiname458@gmail.com</p>
                 <p>
                     <a href="https://t.me/kr1s219a" class="text-decoration-none">
@@ -213,7 +237,7 @@
         </section>
         
         <footer class="bg-dark text-white text-center py-3">
-            <p>&copy; 2025. Все права защищены.</p>
+            <p data-i18n="rights">&copy; 2025. Все права защищены.</p>
         </footer>
     </div>
     <!-- Модальное окно -->
@@ -259,6 +283,99 @@
       });
     });
   </script>
+<script>
+    const translations = {
+      ru: {
+        title: "Портфолио Видеомонтажера",
+        portfolio: "МОЁ ПОРТФОЛИО",
+        about: "О себе",
+        aboutText1: "Привет! Меня зовут Баженова Кристина, я начинающий видеомонтажёр.",
+        aboutText2: "Работаю в Adobe Premiere Pro и изучаю After Effects.",
+        aboutText3: "Обучаюсь в Skillbox на курсе «Профессия Режиссёр монтажа». Уже завершила курс «Монтаж в Adobe Premiere Pro» и продолжаю изучать теорию монтажа, анимацию и создание промо-роликов.",
+        aboutText4: "Также немного владею Photoshop — этого хватает для работы с простыми графическими элементами в видео.",
+        aboutText5: "Стараюсь развивать навыки, искать интересные монтажные решения и делать видео, которые цепляют зрителя. Буду рада новым проектам и возможностям расти в профессии!",
+        works: "Примеры работ",
+        youtube: "YouTube",
+        dzen: "Dzen",
+        warningDzen: "⚠️ Видео с платформы Дзен могут не отображаться из-за блокировщика рекламы. Пожалуйста, отключите AdBlock или откройте сайт в другом браузере.",
+        certificates: "Сертификаты",
+        contacts: "Контакты",
+        email: "Email: kristiname458@gmail.com",
+        rights: "&copy; 2025. Все права защищены."
+      },
+      en: {
+        title: "Video Editor Portfolio",
+        portfolio: "MY PORTFOLIO",
+        about: "About Me",
+        aboutText1: "Hi! My name is Kristina Bazhenova, and I’m a beginner video editor.",
+        aboutText2: "I work with Adobe Premiere Pro and am learning After Effects.",
+        aboutText3: "I'm studying at Skillbox in the 'Editing Director' course. I have completed the 'Editing in Adobe Premiere Pro' course and continue to learn editing theory, animation, and promo video creation.",
+        aboutText4: "I also know some Photoshop — enough to work with basic graphic elements in video.",
+        aboutText5: "I'm trying to improve my skills, find interesting editing solutions, and create videos that engage viewers. I’m open to new projects and opportunities to grow professionally!",
+        works: "Work Samples",
+        youtube: "YouTube",
+        dzen: "Dzen",
+        warningDzen: "⚠️ Videos from Dzen may not display due to ad blockers. Please disable AdBlock or open the site in another browser.",
+        certificates: "Certificates",
+        contacts: "Contacts",
+        email: "Email: kristiname458@gmail.com",
+        rights: "&copy; 2025. All rights reserved."
+      }
+    };
+    
+    const langImages = {
+    certificate: {
+      ru: "certificate.jpg",
+      en: "certificateEN.jpg"
+    },
+    english: {
+      ru: "english.jpg",
+      en: "english_en.jpg"
+    }
+  };
+
+  function setLanguage(lang) {
+    document.documentElement.lang = lang;
+
+
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang][key]) {
+        el.innerHTML = translations[lang][key];
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-img]').forEach(img => {
+      const key = img.getAttribute('data-i18n-img');
+      if (langImages[key] && langImages[key][lang]) {
+        img.src = langImages[key][lang];
+      }
+    });
+
+    // Обновление модального изображения, если оно открыто
+    const modalImage = document.getElementById("modalImage");
+    const currentSrc = modalImage.getAttribute("src");
+
+    Object.keys(langImages).forEach(key => {
+      if (langImages[key].ru === currentSrc || langImages[key].en === currentSrc) {
+        modalImage.src = langImages[key][lang];
+      }
+    });
+  }
+    </script>
+    <script>
+        function changeModalImageByKey(key) {
+          const lang = document.querySelector('html').lang || 'ru';
+          const modalImage = document.getElementById("modalImage");
+      
+          if (langImages[key] && langImages[key][lang]) {
+            modalImage.src = langImages[key][lang];
+          } else {
+            console.warn(`Изображение не найдено для ключа: ${key}, язык: ${lang}`);
+          }
+        }
+      </script>
 
 </body>
 </html>
