@@ -95,70 +95,44 @@
     <div class="background-images" id="bg-images"></div>
     <div class="content-wrapper container">
         <header>
-            <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#" data-i18n="portfolio">МОЁ ПОРТФОЛИО</a>
-
-                    <div class="lang-switch btn-group mt-1" role="group" aria-label="Language switcher">
-                      <button type="button" class="btn btn-outline-light btn-sm" onclick="setLanguage('ru')">RU</button>
-                      <button type="button" class="btn btn-outline-light btn-sm" onclick="setLanguage('en')">EN</button>
-                    </div>
-
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="#about" data-i18n="about">О себе</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#portfolio" data-i18n="works">Примеры работ</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#certificate" data-i18n="certificates">Сертификаты</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="contacts">Контакты</a></li>
-                        </ul>
-                    </div>
-                </div> 
-            </nav> -->
-
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-              <!--<div class="container-fluid flex-column flex-lg-row align-items-start align-items-lg-center">-->
-              <!-- <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap"> -->
-              <div class="container-fluid d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center">
-
-
-                <!-- Заголовок -->
-                <a class="navbar-brand mb-2 mb-lg-0" href="#" data-i18n="portfolio">МОЁ ПОРТФОЛИО</a>
-             <!-- Бургер -->
-                <button class="navbar-toggler align-self-end mb-2 d-lg-none me-2" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
             
-                <!-- Языковые кнопки — только на мобилке (блок d-lg-none) -->
-                <div class="btn-group w-100 mb-2 d-flex justify-content-center d-lg-none" role="group">
-                  <button type="button" class="btn btn-outline-light btn-sm w-50" onclick="setLanguage('ru')">RU</button>
-                  <button type="button" class="btn btn-outline-light btn-sm w-50" onclick="setLanguage('en')">EN</button>
-                </div>
-            
-               
-                <!-- Контейнер с меню + языком на десктопе -->
-                <div class="collapse navbar-collapse w-100 mt-2 mt-lg-0" id="navbarNav">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#about" data-i18n="about">О себе</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio" data-i18n="works">Примеры работ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#certificate" data-i18n="certificates">Сертификаты</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="contacts">Контакты</a></li>
-                  </ul>
-                     
-                  <!-- Языковые кнопки на десктопе -->
-                  <div class="btn-group d-none d-lg-flex" role="group">
-                    <button type="button" class="btn btn-outline-light btn-sm" onclick="setLanguage('ru')">RU</button>
-                    <button type="button" class="btn btn-outline-light btn-sm" onclick="setLanguage('en')">EN</button>
-                  </div>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+            <div class="container-fluid">
+              <!-- Левый блок: Логотип -->
+              <a class="navbar-brand me-lg-auto" href="#" data-i18n="portfolio">МОЁ ПОРТФОЛИО</a>
+          
+              <!-- Бургер только для мобилки -->
+              <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                      aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <!-- Вся правая часть: меню + языки -->
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                  <li class="nav-item"><a class="nav-link" href="#about" data-i18n="about">О себе</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#portfolio" data-i18n="works">Примеры работ</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#certificate" data-i18n="certificates">Сертификаты</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="contacts">Контакты</a></li>
+                </ul>
+          
+                <!-- Языки для десктопа -->
+                <div class="btn-group ms-3 d-none d-lg-flex" role="group">
+                  <button type="button" class="btn btn-outline-light btn-sm" onclick="setLanguage('ru')">RU</button>
+                  <button type="button" class="btn btn-outline-light btn-sm" onclick="setLanguage('en')">EN</button>
                 </div>
               </div>
-            </nav>
-            
-            
+          
+              <!-- Языки для мобилки -->
+              <div class="btn-group w-100 my-2 d-flex justify-content-center d-lg-none" role="group">
+                <button type="button" class="btn btn-outline-light btn-sm w-50" onclick="setLanguage('ru')">RU</button>
+                <button type="button" class="btn btn-outline-light btn-sm w-50" onclick="setLanguage('en')">EN</button>
+              </div>
+            </div>
+          </nav>
+          
+              
         </header>
         
         <section id="about" class="py-3 text-center">
