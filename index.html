@@ -88,6 +88,24 @@
         background-color: #ffffff46;
         color: #fff;
         }
+        /* #about h2 {
+        color: #00f0ff;
+        text-shadow: 0 0 10px #00f0ff;
+        font-weight: bold;
+        } */
+
+        #about p {
+        color: #ffffff;
+        text-shadow: 0 0 5px #00f0ff77;
+        }
+        .about-box {
+  border-left: 4px solid #0d6efd;
+  padding-left: 20px;
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+}
+
 
     </style>
 </head>
@@ -135,16 +153,31 @@
               
         </header>
         
-        <section id="about" class="py-3 text-center">
-            <div class="container">
-                <h2 class="text-primary" data-i18n="about">О себе</h2>
-                <p class="lead" data-i18n="aboutText1">Привет! Меня зовут Баженова Кристина, я начинающий видеомонтажёр.</p>
-                <p data-i18n="aboutText2">Работаю в Adobe Premiere Pro и изучаю After Effects.</p>
-                <p data-i18n="aboutText3">Обучаюсь в Skillbox на курсе «Профессия Режиссёр монтажа». Уже завершила курс «Монтаж в Adobe Premiere Pro» и продолжаю изучать теорию монтажа, анимацию и создание промо-роликов.</p>
-                <p data-i18n="aboutText4">Также немного владею Photoshop — этого хватает для работы с простыми графическими элементами в видео.</p>
-                <p data-i18n="aboutText5">Стараюсь развивать навыки, искать интересные монтажные решения и делать видео, которые цепляют зрителя. Буду рада новым проектам и возможностям расти в профессии!</p>                
+        <section id="about" class="py-4">
+          <div class="container">
+            <h2 class="text-primary text-center mb-4" data-i18n="about">О себе</h2>
+            <div class="row justify-content-center align-items-start">
+              <!-- Аватарка -->
+              <div class="col-md-3 text-center mb-3 mb-md-0">
+                <img src="avatar-kino.png" alt="Avatar" class="img-fluid rounded-circle shadow" style="max-width: 150px;">
+              </div>
+              <!-- Текст -->
+              <div class="col-md-8" style="font-size: 1.1rem;">
+                <p data-i18n="aboutText1">👋 Привет! Меня зовут Кристина, я начинающий видеомонтажёр и продолжаю учиться этой профессии.</p>
+                <p data-i18n="aboutText2">🎓 Сейчас прохожу курс <strong>«Профессия Режиссёр монтажа»</strong> от Skillbox. Уже освоила монтаж в <strong>Adobe Premiere Pro</strong> — умею работать с видео- и аудиотреками, делать базовую цветокоррекцию, добавлять титры, переходы, простые эффекты и анимацию. Немного владею <strong>Photoshop</strong> — этого хватает для подготовки несложной графики в роликах.</p>
+                <p data-i18n="aboutText3">📂 В портфолио пока только учебные проекты, но я стараюсь подходить к ним серьёзно и с вниманием к деталям. Постепенно набираю опыт и хочу создавать видео, которые будет приятно смотреть.</p>
+                <p data-i18n="aboutText4">📬 Связаться со мной можно в Telegram — обсудим задачу, сроки и цену.</p>
+                <a href="https://t.me/kr1s219a" target="_blank" class="btn btn-outline-light btn-sm mb-3" data-i18n="aboutTextButton">
+                  Написать в Telegram
+                </a>
+                <p data-i18n="aboutText5">💬 Работаю по договорённости и с доступным прайсом — потому что понимаю, что пока только в начале пути.</p>
+                <p data-i18n="aboutText6">🎬 Буду рада первым реальным проектам — это важный шаг для роста и развития.</p>
+              </div>
             </div>
+          </div>
         </section>
+        
+            
         
         <section id="portfolio" class="py-3 text-center">
             <div class="container">
@@ -218,7 +251,7 @@
                 <!-- Картинка 1 -->
         <img src="certificate.jpg" alt="Premiere Pro"
         class="img-fluid m-2"
-        style="max-width: 30%; cursor: pointer; border: 2px solid #007bff52; border-radius: 10px;"
+        style="max-width: 30%; cursor: pointer; box-shadow: 0 0 15px rgba(126, 135, 255, 0.39); border-radius: 10px;"
         data-i18n-img="certificate"
         data-bs-toggle="modal"
         data-bs-target="#imageModal"
@@ -227,7 +260,7 @@
                 <!-- Картинка 2 -->
         <img src="english.jpg" alt="Английский"
         class="img-fluid m-2"
-        style="max-width: 40%; cursor: pointer; box-shadow: 0 0 15px rgba(252, 251, 251, 0.39); border-radius: 10px;"
+        style="max-width: 40%; cursor: pointer; box-shadow: 0 0 15px rgba(201, 241, 106, 0.39); border-radius: 10px;"
         data-i18n-img="english"
         data-bs-toggle="modal"
         data-bs-target="#imageModal"
@@ -303,11 +336,13 @@
         title: "Портфолио Видеомонтажера",
         portfolio: "МОЁ ПОРТФОЛИО",
         about: "О себе",
-        aboutText1: "Привет! Меня зовут Баженова Кристина, я начинающий видеомонтажёр.",
-        aboutText2: "Работаю в Adobe Premiere Pro и изучаю After Effects.",
-        aboutText3: "Обучаюсь в Skillbox на курсе «Профессия Режиссёр монтажа». Уже завершила курс «Монтаж в Adobe Premiere Pro» и продолжаю изучать теорию монтажа, анимацию и создание промо-роликов.",
-        aboutText4: "Также немного владею Photoshop — этого хватает для работы с простыми графическими элементами в видео.",
-        aboutText5: "Стараюсь развивать навыки, искать интересные монтажные решения и делать видео, которые цепляют зрителя. Буду рада новым проектам и возможностям расти в профессии!",
+        aboutText1: "👋 Привет! Меня зовут Кристина, я начинающий видеомонтажёр и продолжаю учиться этой профессии.",
+        aboutText2: "🎓 Сейчас прохожу курс <strong>«Профессия Режиссёр монтажа»</strong> от Skillbox. Уже освоила монтаж в <strong>Adobe Premiere Pro</strong> — умею работать с видео- и аудиотреками, делать базовую цветокоррекцию, добавлять титры, переходы, простые эффекты и анимацию. Немного владею <strong>Photoshop</strong> — этого хватает для подготовки несложной графики в роликах.",
+        aboutText3: "📂 В портфолио пока только учебные проекты, но я стараюсь подходить к ним серьёзно и с вниманием к деталям. Постепенно набираю опыт и хочу создавать видео, которые будет приятно смотреть.",
+        aboutText4: "📬 Связаться со мной можно в Telegram — обсудим задачу, сроки и цену.",
+        aboutTextButton: "Написать в Telegram",
+        aboutText5: "💬 Работаю по договорённости и с доступным прайсом — потому что понимаю, что пока только в начале пути.",
+        aboutText6: "🎬 Буду рада первым реальным проектам — это важный шаг для роста и развития.",
         works: "Примеры работ",
         youtube: "YouTube",
         dzen: "Dzen",
@@ -321,11 +356,13 @@
         title: "Video Editor Portfolio",
         portfolio: "MY PORTFOLIO",
         about: "About Me",
-        aboutText1: "Hi! My name is Kristina Bazhenova, and I’m a beginner video editor.",
-        aboutText2: "I work with Adobe Premiere Pro and am learning After Effects.",
-        aboutText3: "I'm studying at Skillbox in the 'Editing Director' course. I have completed the 'Editing in Adobe Premiere Pro' course and continue to learn editing theory, animation, and promo video creation.",
-        aboutText4: "I also know some Photoshop — enough to work with basic graphic elements in video.",
-        aboutText5: "I'm trying to improve my skills, find interesting editing solutions, and create videos that engage viewers. I’m open to new projects and opportunities to grow professionally!",
+        aboutText1: "👋 Hi! My name is Kristina, I’m a beginner video editor and currently learning this profession.",
+        aboutText2: "🎓 I'm taking the <strong>“Video Editing Director”</strong> course at Skillbox. I’ve already learned to edit in <strong>Adobe Premiere Pro</strong> — I can work with video and audio tracks, apply basic color correction, add titles, transitions, simple effects and animations. I also use <strong>Photoshop</strong> to create basic graphics when needed.",
+        aboutText3: "📂 So far, I only have student projects in my portfolio, but I treat them seriously and with attention to detail. I'm gradually gaining experience and want to create videos that are enjoyable to watch.",
+        aboutText4: "📬 You can contact me on Telegram — we’ll discuss the task, deadlines, and budget.",
+        aboutTextButton: "Message on Telegram",
+        aboutText5: "💬 I work by agreement and offer affordable rates — I know I’m still at the start of my journey.",
+        aboutText6: "🎬 I’d love to work on first real projects — it’s an important step for growing in the field.",
         works: "Work Samples",
         youtube: "YouTube",
         dzen: "Dzen",
